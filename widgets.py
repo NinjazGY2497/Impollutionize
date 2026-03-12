@@ -3,7 +3,6 @@ from PySide6.QtGui import QPixmap
 from ui_widget import Ui_widget
 from ui_homeWidget import Ui_homeWidget
 from random import shuffle
-import resource_rc
 
 waterTermToDef = {
     "Eutrophication": "Nutrient runoff that creates\n\"Dead Zones\" by starving\nwater of oxygen",
@@ -84,14 +83,12 @@ class Widget(QWidget, Ui_widget):
 
         self.selectedItems.append(self.shuffledList[i])
 
-        print(self.selectedItems)
         if self.alreadySelected == 2:
             firstItem = self.selectedItems[0]
             secondItem = self.selectedItems[1]
             if (self.targetDict.get(firstItem, None) == secondItem) or (self.targetDict.get(secondItem, None) == firstItem):
                 for item in self.selectedItems:
                     self.correctItems.append(item)
-                print("correct")
 
         if len(self.correctItems) == 12:
             QMessageBox.information(self, "Victory!", "You win!")
