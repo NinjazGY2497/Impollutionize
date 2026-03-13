@@ -1,0 +1,7 @@
+<RCC>
+  <qresource>
+    <file>Images/air banner.png</file>
+    <file>Images/light banner.png</file>
+    <file>Images/water banner.png</file>
+  </qresource>
+</RCC>
